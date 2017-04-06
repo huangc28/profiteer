@@ -1,0 +1,39 @@
+version: '2'
+services:
+  nginx:
+    image: huangc28/nginx:0.2.0
+    ports:
+      - '3001:80'
+    volumes:
+      - ./application:/var/www/html
+    networks:
+      - dt-net
+  php:
+    image: huangc28/php:0.1.0
+    volumes:
+      - ./application:/var/www/html
+    networks:
+      - dt-net
+  redis:
+    image: redis:alpine
+    networks:
+      - dt-net
+  postgres:
+    image: huangc28/postgres:0.2.0
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_ROOT_PASSWORD: root
+      POSTGRES_DATABASE: my-app
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+    volumes:
+      - postgresdata:/var/lib/postgresql
+    networks:
+      - dt-net
+networks:
+  dt-net:
+    driver: 'bridge'
+volumes:
+  postgresdata:
+    driver: 'local'
