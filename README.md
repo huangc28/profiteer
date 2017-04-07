@@ -14,43 +14,15 @@ Install docker on windows
 
 `https://docs.docker.com/docker-for-windows/install/`
 
-Build the necessary images before building up the environment.
-
-### Build php
-
-Change directory to nginx,
-
-`cd php`
-
-and
-
-`docker build -t nextdealshop/php .`
-
-### Build nginx
-
-Change directory to nginx
-
-`cd ../nginx`
-
-and
-
-`docker build -t nextdealshop/nginx`
-
-**nginx** will be hosted on port `80` from the container.
-
-### Build postgres
-
-Change directory to postgres
-
-`cd ../postgres`
-
-
-and
-
-`docker build -t nextdealshop/postgres`
-
-**postgres** will be hosted on port `5432` from the container
-
 ## Build the environment
 
 `docker-composer up -d`. Open your browser, request `localhost:3001`.
+
+## ERP Application
+
+Create `application` folder, Place all server side code (in this case we use lumen) in `application` folder.
+
+## Remark
+
+- Nginx will be hosted on port `80` from the container, bridged by port `3001` on the host.
+- Postgres will be hosted on port `5432` from the container, bridged by port `5432` on the host.
