@@ -1,7 +1,7 @@
 version: '2'
 services:
   nginx:
-    image: nextdealshop/nginx:latest
+    build: ./nginx
     ports:
       - '3001:80'
     volumes:
@@ -9,7 +9,7 @@ services:
     networks:
       - dt-net
   php:
-    image: nextdealshop/php:latest
+    build: ./php
     volumes:
       - ./application:/var/www/html
       - ./application:/opt
@@ -20,7 +20,7 @@ services:
     networks:
       - dt-net
   postgres:
-    image: nextdealshop/postgres:latest
+    image: ./postgres
     ports:
       - '5432:5432'
     environment:
