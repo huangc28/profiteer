@@ -1,18 +1,11 @@
 version: '2'
 services:
-  nginx:
-    build: ./nginx
+  profiteer:
+    build: ./
     ports:
-      - '3001:80'
+      - 3001:80
     volumes:
       - ./application:/var/www/html
-    networks:
-      - dt-net
-  php:
-    build: ./php
-    volumes:
-      - ./application:/var/www/html
-      - ./application:/opt
     networks:
       - dt-net
   redis:
@@ -20,12 +13,12 @@ services:
     networks:
       - dt-net
   postgres:
-    image: ./postgres
+    build: ./postgres
     ports:
       - '5432:5432'
     environment:
       POSTGRES_ROOT_PASSWORD: root
-      POSTGRES_DATABASE: my-app
+      POSTGRES_DATABASE: my_app
       POSTGRES_USER: docker
       POSTGRES_PASSWORD: docker
     volumes:
