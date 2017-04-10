@@ -1,6 +1,6 @@
 version: '2'
 services:
-  profiteer:
+  app:
     build: ./
     ports:
       - 3001:80
