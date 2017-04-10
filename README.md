@@ -6,13 +6,9 @@ OS infrustructure for **nextdealshop ERP**. It's build up with `php 7.1`, `nginx
 
 Follow the steps below to properly run development environment.
 
-Install docker on mac
+Install docker on [mac](https://docs.docker.com/docker-for-mac/install/)
 
-`https://docs.docker.com/docker-for-mac/install/`
-
-Install docker on windows
-
-`https://docs.docker.com/docker-for-windows/install/`
+Install docker on [windows](https://docs.docker.com/docker-for-windows/install/)
 
 ## Execute commands in Container
 
