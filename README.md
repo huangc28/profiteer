@@ -14,6 +14,16 @@ Install docker on windows
 
 `https://docs.docker.com/docker-for-windows/install/`
 
+## Execute commands in Container
+
+`develop.sh` script made easier for developer to execute commands inside the docker container. For example `php artisan`, `composer`, `phpunit` ...etc
+
+1. `./develop.sh art` ---> `php artisan`
+
+2. `./develop.sh composer` ---> `composer`
+
+3. `./develop.sh test` ---> `./vendor/bin/phpunit`
+
 ## Build the environment
 
 `docker-composer up -d`. Open your browser, request `localhost:3001`.
