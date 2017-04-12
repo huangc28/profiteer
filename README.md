@@ -1,6 +1,6 @@
 ## Profiteer
 
-OS infrustructure for **nextdealshop ERP**. It's build up with `php 7.1`, `nginx`, `postgresql 9.6` and `redis`.
+Backend archetect with `php 7.1`, `nginx`, `postgresql 9.6` and `redis`.
 
 ## Installation
 
